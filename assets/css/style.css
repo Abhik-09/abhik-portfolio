@@ -490,6 +490,10 @@ main {
 
 
 
+/* Optional: Customize cards, links, and text too */
+
+
+
 
 /*-----------------------------------*\
   #ABOUT
@@ -776,11 +780,19 @@ main {
   font-size: 14px;
   text-decoration: none;
   margin-top: -30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .btn-resume-download:hover {
-  background-color: #ffd54f;
+  background-color: #fecb22;
   color: #111;
+}
+
+.btn-resume-download img.icon-svg {
+  width: 18px;
+  height: 18px;
 }
 
 
