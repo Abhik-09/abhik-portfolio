@@ -564,11 +564,11 @@ main {
  * #testimonials 
  */
 
-.certifications { margin-bottom: 30px; }
+ .testimonials { margin-bottom: 30px; }
 
-.certifications-title { margin-bottom: 20px; }
+.testimonials-title { margin-bottom: 20px; }
 
-.certifications-list {
+.testimonials-list {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -595,6 +595,14 @@ main {
   background: var(--bg-gradient-onyx);
   border-radius: 14px;
   box-shadow: var(--shadow-1);
+  
+}
+
+.testimonials-avatar-box img {
+  border-radius: 14px;  /* Same as container */
+  object-fit: cover;    /* Keeps the image nicely cropped if it's not square */
+  width: 100%;
+  height: 100%;
 }
 
 .testimonials-item-title { margin-bottom: 7px; }
