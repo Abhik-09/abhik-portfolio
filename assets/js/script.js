@@ -158,4 +158,43 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
+  /*Contact Form*/
+  const form1 = document.querySelector("form");
+  const formMessage = document.getElementById("form-message");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // prevent default form submission
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        formMessage.style.display = "block";
+        form.reset(); // clear the form
+      } else {
+        alert("Oops! Something went wrong.");
+      }
+    });
+  });
+ 
+  /*Zoom out feature on Pofile Picture*/
+  const avatar = document.getElementById("real-avatar");
+const modal = document.getElementById("avatar-modal");
+const modalOverlay = document.getElementById("avatar-modal-overlay");
+
+avatar.addEventListener("click", () => {
+  modal.classList.add("show");
+});
+
+modalOverlay.addEventListener("click", () => {
+  modal.classList.remove("show");
+});
+
+  
 

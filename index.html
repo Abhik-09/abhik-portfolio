@@ -42,9 +42,11 @@
 
       <div class="sidebar-info">
 
-        <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Abhik Chanda" width="80">
+        <figure class="avatar-box avatar-hover-wrapper">
+          <img src="./assets/images/my-avatar.png" alt="Cartoon Abhik" class="avatar-img avatar-default">
+          <img src="./assets/images/Abhik profile.jpg" alt="Real Abhik" class="avatar-img avatar-hover"  id="real-avatar">
         </figure>
+        
 
         <div class="info-content">
           <h1 class="name" title="Abhik Chanda">Abhik Chanda</h1>
@@ -160,6 +162,13 @@
 
     </aside>
 
+    <!--
+       Zoom Modal changed
+    -->
+      <div class="avatar-modal" id="avatar-modal">
+      <div class="avatar-modal-overlay" id="avatar-modal-overlay"></div>
+        <img src="./assets/images/Abhik profile.jpg" alt="Zoomed Avatar" class="avatar-modal-img" id="avatar-modal-img">
+      </div>
 
 
 
@@ -1236,7 +1245,8 @@
               <span>Send Message</span>
             </button>
 
-
+            
+            <!-- Success message -->
             <p id="form-message" style="display: none; color: green; margin-top: 10px;">✅ Thank you! Your message has been sent successfully.</p>
 
           </form>
