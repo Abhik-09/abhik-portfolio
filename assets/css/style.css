@@ -395,11 +395,13 @@ main {
   opacity: 0;
   visibility: hidden;
   transition: var(--transition-2);
+  display: none;
 }
 
 .sidebar.active .sidebar-info_more {
   opacity: 1;
   visibility: visible;
+  display: block;
 }
 
 .contacts-list {
