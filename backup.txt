@@ -1,0 +1,110 @@
+
+css zoom effect
+
+.avatar-modal.show .avatar-modal-img {
+  transform: scale(1);
+}
+
+
+.avatar-modal.show {
+  display: flex;
+}
+
+.avatar-modal-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+}
+
+
+
+zoom model
+
+ <div class="avatar-modal" id="avatar-modal">
+      <div class="avatar-modal-overlay" id="avatar-modal-overlay"></div>
+        <img src="./assets/images/Abhik profile.jpg" alt="Zoomed Avatar" class="avatar-modal-img" id="avatar-modal-img">
+      </div>
+
+
+
+
+<figure class="avatar-box avatar-hover-wrapper">
+          <img src="./assets/images/my-avatar.png" alt="Cartoon Abhik" class="avatar-img avatar-default" width="80px">
+          <img src="./assets/images/Abhik profile.jpg" alt="Real Abhik" class="avatar-img avatar-hover"  id="real-avatar">
+        </figure>
+
+
+
+
+
+
+        .avatar-hover-wrapper {
+  position: relative;
+  /* fluid size: never smaller than 60px, never larger than 150px, 
+     but otherwise 15vw of the viewport width */
+  width: clamp(60px, 15vw, 150px);
+  aspect-ratio: 1 / 1;
+  border-radius: inherit;  /* keeps your .avatar-box border-radius */
+  overflow: hidden;
+  flex: 0 0 clamp(60px, 15vw, 150px);
+  border-radius: 20px;
+}
+
+
+.avatar-hover-wrapper img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease-in-out;
+  border-radius: inherit;  /* match the wrapper */
+}
+
+
+.avatar-default {
+  opacity: 1;
+  z-index: 1;
+  position: absolute;
+}
+
+.avatar-hover {
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+}
+
+.avatar-hover-wrapper:hover .avatar-hover {
+  opacity: 1;
+}
+
+.avatar-hover-wrapper:hover .avatar-default {
+  opacity: 0;
+}
+
+.avatar-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+.avatar-modal-img {
+  width: 90vw; /* Takes 90% of the viewport width */
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.4s ease-in-out;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
