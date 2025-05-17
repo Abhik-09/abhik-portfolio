@@ -1940,8 +1940,8 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 /* ─── Avatar Hover Swap ─── */
 .avatar-box {
-  width: clamp(80px, 12vw, 150px);
-  height: clamp(80px, 12vw, 150px);
+  width: clamp(80px, 15vw, 150px);
+  height: clamp(80px, 15vw, 150px);
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 20px;
@@ -2006,3 +2006,23 @@ textarea.form-input::-webkit-resizer { display: none; }
 .avatar-modal.open .avatar-modal-img {
   transform: scale(1);
 }
+
+
+
+/*──────────────────────────────────
+  Force certification avatars small on mobile,
+  grow to desktop size at 580px+
+──────────────────────────────────*/
+
+.testimonials-avatar-box {
+  width: 60px;
+  height: 60px;
+}
+
+@media (min-width: 580px) {
+  .testimonials-avatar-box {
+    width: 80px;
+    height: 80px;
+  }
+}
+
