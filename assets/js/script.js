@@ -183,18 +183,25 @@ for (let i = 0; i < navigationLinks.length; i++) {
     });
   });
  
-  /*Zoom out feature on Pofile Picture*/
-  const avatar = document.getElementById("real-avatar");
-const modal = document.getElementById("avatar-modal");
-const modalOverlay = document.getElementById("avatar-modal-overlay");
+  // AVATAR LIGHTBOX
+const avatarBox = document.querySelector('.avatar-box');
+const hoverImg = avatarBox.querySelector('.avatar-hover');
+const modal    = document.getElementById('avatar-modal');
+const modal_Img = document.getElementById('avatar-modal-img');
 
-avatar.addEventListener("click", () => {
-  modal.classList.add("show");
+// On click: show lightbox with the real image
+avatarBox.addEventListener('click', () => {
+  modal_Img.src = hoverImg.src;
+  modal.classList.add('open');
 });
 
-modalOverlay.addEventListener("click", () => {
-  modal.classList.remove("show");
+// On click outside the image (anywhere on the overlay): close
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('open');
+  }
 });
+
 
   
 

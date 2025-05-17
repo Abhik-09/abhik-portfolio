@@ -23,12 +23,23 @@ css zoom effect
 
 zoom model
 
- <div class="avatar-modal" id="avatar-modal">
+      <div class="avatar-modal" id="avatar-modal">
       <div class="avatar-modal-overlay" id="avatar-modal-overlay"></div>
         <img src="./assets/images/Abhik profile.jpg" alt="Zoomed Avatar" class="avatar-modal-img" id="avatar-modal-img">
       </div>
 
+/*Zoom out feature on Pofile Picture*/
+  const avatar = document.getElementById("real-avatar");
+const modal = document.getElementById("avatar-modal");
+const modalOverlay = document.getElementById("avatar-modal-overlay");
 
+avatar.addEventListener("click", () => {
+  modal.classList.add("show");
+});
+
+modalOverlay.addEventListener("click", () => {
+  modal.classList.remove("show");
+});
 
 
 <figure class="avatar-box avatar-hover-wrapper">
@@ -108,3 +119,7 @@ zoom model
   transition: transform 0.4s ease-in-out;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
+
+
+
+

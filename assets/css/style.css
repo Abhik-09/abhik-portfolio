@@ -1940,50 +1940,69 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 /* ─── Avatar Hover Swap ─── */
 .avatar-box {
-  position: relative;
-  width: 80px;              /* fixed size, or use clamp() for fluid */
-  height: 80px;
-  border-radius: 20px;      /* keep your existing rounding */
+  width: clamp(80px, 15vw, 150px);
+  height: clamp(80px, 15vw, 150px);
+  aspect-ratio: 1 / 1;
   overflow: hidden;
+  border-radius: 20px;
+  position: relative;
 }
 
 .avatar-box img {
   position: absolute;
-  top: 0; left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: opacity 0.3s ease-in-out;
 }
 
-/* default image visible */
 .avatar-box .avatar-default {
   opacity: 1;
   z-index: 1;
 }
 
-/* hover image hidden initially */
 .avatar-box .avatar-hover {
   opacity: 0;
   z-index: 2;
-}
-
-/* on hover: fade in the hover image, fade out the default */
-.avatar-box:hover .avatar-hover {
-  opacity: 1;
 }
 
 .avatar-box:hover .avatar-default {
   opacity: 0;
 }
 
-.avatar-box {
-  /* fluid, no media queries: min 60px, ideal 15vw, max 120px */
-  width: clamp(80px, 15vw, 150px);
-  height: clamp(80px, 15vw, 150px);
-  aspect-ratio: 1 / 1;
-  /* the rest stays the same */
+.avatar-box:hover .avatar-hover {
+  opacity: 1;
 }
 
 
 /* Optional zoom on open (if you want a scale effect) */
+/* ─── AVATAR ZOOM LIGHTBOX ─── */
+.avatar-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: zoom-out;
+}
+
+.avatar-modal.open {
+  display: flex;
+}
+
+.avatar-modal-img {
+  width: 90vw;
+  max-width: 400px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 20px;
+  transform: scale(0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+.avatar-modal.open .avatar-modal-img {
+  transform: scale(1);
+}
