@@ -1940,8 +1940,8 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 /* ─── Avatar Hover Swap ─── */
 .avatar-box {
-  width: clamp(80px, 15vw, 150px);
-  height: clamp(80px, 15vw, 150px);
+  width: clamp(80px, 11.5vw, 150px);
+  height: clamp(80px, 11.5vw, 150px);
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 20px;
