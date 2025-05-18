@@ -45,7 +45,7 @@ for (let i = 0; i < testimonialsItem.length; i++) {
     modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
     modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
 
-    //new
+    const wrapper = this.closest(".testimonials-item");//new
     modalDate.dateTime  = wrapper.dataset.datetime;
     modalDate.innerText = wrapper.dataset.date;
 
