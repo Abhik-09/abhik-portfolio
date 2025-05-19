@@ -167,7 +167,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
 }
 
   /*Contact Form*/
-  const form1 = document.querySelector("form");
+  const form1 = document.querySelector("form");                   //new
   const formMessage = document.getElementById("form-message");
 
   form.addEventListener("submit", function (e) {
@@ -191,8 +191,8 @@ for (let i = 0; i < navigationLinks.length; i++) {
     });
   });
  
-  // AVATAR LIGHTBOX
-const avatarBox = document.querySelector('.avatar-box');
+  // AVATAR LIGHTBOX 
+const avatarBox = document.querySelector('.avatar-box');    //new
 const hoverImg = avatarBox.querySelector('.avatar-hover');
 const modal    = document.getElementById('avatar-modal');
 const modal_Img = document.getElementById('avatar-modal-img');

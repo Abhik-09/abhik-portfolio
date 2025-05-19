@@ -123,3 +123,36 @@ modalOverlay.addEventListener("click", () => {
 
 
 
+
+
+
+
+
+.btn-resume-download {                     /*New*/
+  float: right;
+  background-color: #f5d776;
+  color: #000;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: -30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-resume-download:hover {              /*New*/
+  background-color: #fecb22;
+  color: #111;
+}
+
+.btn-resume-download img.icon-svg {        /*New*/
+  width: 18px;
+  height: 18px;
+}
+
+
+
+
